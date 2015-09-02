@@ -9,11 +9,11 @@ import java.awt.RenderingHints;
 import javax.swing.JPanel;
 import nucleo.Node;
 
-public class ArvoreVisual extends JPanel {
+public class VisualTree extends JPanel {
 
   private Node raiz;
 
-  public ArvoreVisual() {
+  public VisualTree() {
     super();
     setLayout(null);
     this.raiz = null;
@@ -79,7 +79,7 @@ public class ArvoreVisual extends JPanel {
   }
 
   public void iniciarPosicao(Node no) {
-    NoVisual visualPai = no.getView();
+    VisualNode visualPai = no.getView();
     int x = 0, y, larguraIrmao = 0;
     y = visualPai.pontoInicial.y + visualPai.getHeight() * 2;
 
@@ -97,9 +97,9 @@ public class ArvoreVisual extends JPanel {
   }
 
   public void centralizarPosicao(Node no) {
-    NoVisual visual = no.getView();
+    VisualNode visual = no.getView();
     if (no.isLeaf()) {
-      Animacao.moverObjeto(visual, visual.pontoInicial);
+      Animation.moverObjeto(visual, visual.pontoInicial);
       return;
     }
     int xEsquerda = 0;
@@ -125,7 +125,7 @@ public class ArvoreVisual extends JPanel {
     }
     Point posicao = new Point(x, visual.pontoInicial.y);
 
-    Animacao.moverObjeto(visual, posicao);
+    Animation.moverObjeto(visual, posicao);
     visual.pontoInicial = posicao;
 
   }

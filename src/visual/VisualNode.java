@@ -9,12 +9,12 @@ import java.awt.Point;
 import java.awt.RenderingHints;
 import javax.swing.JLabel;
 
-public class NoVisual extends JLabel {
+public class VisualNode extends JLabel {
 
   private final JLabel info;
   public Point pontoInicial;
   
-  public NoVisual(int value) {
+  public VisualNode(int value) {
     super();
     int raio = 35;
     setSize(raio, raio);

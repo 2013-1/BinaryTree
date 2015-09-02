@@ -1,6 +1,6 @@
 package nucleo;
 
-import visual.NoVisual;
+import visual.VisualNode;
 
 /**
  *
@@ -12,21 +12,21 @@ public class Node {
   public Node parent;
   private Node left;
   private Node right;
-  private final NoVisual view;
+  private final VisualNode view;
 
   public Node(int value) {
     this.value = value;
     this.left = null;
     this.right = null;
     this.parent = null;
-    this.view = new NoVisual(value);
+    this.view = new VisualNode(value);
   }
 
   public int getInfo() {
     return this.value;
   }
 
-  public NoVisual getView() {
+  public VisualNode getView() {
     return view;
   }
 

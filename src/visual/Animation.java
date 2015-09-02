@@ -11,7 +11,7 @@ import javax.swing.JComponent;
  * @author Yan Kaic
  * @since 2015
  */
-public class Animacao extends Thread {
+public class Animation extends Thread {
 
   private final JComponent objeto;
   private final Point pontoPartida;
@@ -30,7 +30,7 @@ public class Animacao extends Thread {
    * @param pontoChegada ponto que o objeto vai ficar quando a animacao
    * terminar.
    */
-  public Animacao(JComponent objeto, Point pontoChegada) {
+  public Animation(JComponent objeto, Point pontoChegada) {
     this.objeto = objeto;
     pontoPartida = objeto.getLocation();
 
@@ -51,7 +51,7 @@ public class Animacao extends Thread {
    * @param velocidade passo da animacao.
    */
   public static void definirVelocidade(int velocidade) {
-    Animacao.velocidade = velocidade;
+    Animation.velocidade = velocidade;
   }
 
   @Override
@@ -84,7 +84,7 @@ public class Animacao extends Thread {
    * @param destino ponto que deseja que o objeto fique depois da animacao.
    */
   public static void moverObjeto(JComponent objeto, Point destino) {
-    Animacao animacao = new Animacao(objeto, destino);
+    Animation animacao = new Animation(objeto, destino);
     animacao.start();
   }
 

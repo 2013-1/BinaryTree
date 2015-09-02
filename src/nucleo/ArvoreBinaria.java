@@ -1,6 +1,6 @@
 package nucleo;
 
-import visual.ArvoreVisual;
+import visual.VisualTree;
 
 /**
  *
@@ -10,12 +10,12 @@ public class ArvoreBinaria {
 
   private Node raiz;
   private int tamanho;
-  private final ArvoreVisual visual;
+  private final VisualTree visual;
 
   public ArvoreBinaria() {
     this.raiz = null;
     this.tamanho = 0;
-    this.visual = new ArvoreVisual();
+    this.visual = new VisualTree();
   }
 
   public void inserir(int valor) throws IllegalArgumentException {
@@ -102,7 +102,7 @@ public class ArvoreBinaria {
     return new int[0];
   }
 
-  public ArvoreVisual getVisual() {
+  public VisualTree getVisual() {
     return visual;
   }
 
